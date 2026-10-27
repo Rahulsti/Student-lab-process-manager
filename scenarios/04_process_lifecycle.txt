@@ -1,0 +1,16 @@
+# Scenario 4: process handling - fork/exec, early termination, zombie and orphan handling, clean shutdown
+init 4 2 3
+add Ravi 1 1 1 20
+add Sneha 1 0 1 20
+add Vikram 2 1 1 20
+req 0 1 1 1
+req 1 1 0 1
+req 2 1 0 0
+ps
+end 1
+show
+demo zombie
+demo orphan
+ps
+stats
+quit

@@ -1,0 +1,27 @@
+# Scenario 3: same workload under FCFS and Round Robin queue scheduling
+policy fcfs
+init 3 1 1
+add Holder 2 0 0 3
+add LicUser 0 1 0 1
+add Anita 3 0 0 2
+add Bala 1 1 0 2
+req 0 2 0 0
+req 1 0 1 0
+req 2 3 0 0
+req 3 1 1 0
+queue
+waitall
+# ---- repeat with Round Robin ----
+policy rr
+init 3 1 1
+add Holder 2 0 0 3
+add LicUser 0 1 0 1
+add Anita 3 0 0 2
+add Bala 1 1 0 2
+req 0 2 0 0
+req 1 0 1 0
+req 2 3 0 0
+req 3 1 1 0
+queue
+waitall
+stats

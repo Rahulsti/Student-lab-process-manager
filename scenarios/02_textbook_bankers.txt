@@ -1,0 +1,25 @@
+# Scenario 2: the classic Silberschatz 5-process / 3-resource Banker's example
+init 10 5 7
+add P0 7 5 3 6
+add P1 3 2 2 2
+add P2 9 0 2 5
+add P3 2 2 2 3
+add P4 4 3 3 4
+req 0 0 1 0
+req 1 2 0 0
+req 2 3 0 2
+req 3 2 1 1
+req 4 0 0 2
+show
+safe
+# P1 asks for <1,0,2>: safe, granted
+req 1 1 0 2
+# P4 asks for <3,3,0>: not enough available, queued
+req 4 3 3 0
+# P0 asks for <0,2,0>: available, but the resulting state is unsafe, queued
+req 0 0 2 0
+# P3 asks for more than its declared maximum: denied outright
+req 3 1 0 0
+queue
+waitall
+stats

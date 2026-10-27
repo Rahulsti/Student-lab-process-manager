@@ -1,0 +1,18 @@
+# Scenario 1: everyday lab allocation with a safe grant, an unsafe request and an unavailable request
+init 4 2 3
+add Arun 2 1 1 3
+add Divya 2 1 2 4
+add Karthik 3 1 1 2
+add Meera 1 1 1 2
+req 0 1 1 0
+req 1 1 1 1
+req 2 2 0 1
+req 3 1 1 1
+show
+safe
+queue
+ps
+req 0 1 0 1
+waitall
+show
+stats
